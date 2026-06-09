@@ -1,95 +1,77 @@
-<!DOCTYPE html>
-<html lang="sk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demo – Mike AI Asistent</title>
-  <style>
-    body { margin: 0; min-height: 100vh; background: #fff6f3; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: sans-serif; }
-    h1 { color: #1a1a1a; font-size: 1.5rem; margin-bottom: 8px; }
-    p { color: #555; font-size: 0.95rem; }
-  </style>
-</head>
-<body>
-  <h1>Mike AI – Trénerský Asistent</h1>
-  <p>Kliknite na tlačidlo vpravo dole 👇</p>
-
-  <script type="module" defer>
-    import Chatbot from "https://cdn.n8nchatui.com/v1/embed.js";
-    Chatbot.init({
-      "n8nChatUrl": "https://oleginoo2026.app.n8n.cloud/webhook/7693eb76-c3a4-4f84-9633-1cb9bf3fb3f0/chat",
-      "metadata": {},
-      "theme": {
-        "button": {
-          "backgroundColor": "#f36539",
-          "right": 20,
-          "bottom": 20,
-          "size": 50,
-          "iconColor": "#ffffff",
-          "customIconSrc": "https://www.svgrepo.com/show/362552/chat-centered-dots-bold.svg",
-          "customIconSize": 60,
-          "customIconBorderRadius": 15,
-          "autoWindowOpen": {
-            "autoOpen": true,
-            "openDelay": 1
-          },
-          "borderRadius": "rounded",
-          "draggable": false
+<script type="module" defer>
+  import Chatbot from "https://cdn.n8nchatui.com/v1/embed.js";
+  Chatbot.init({
+    "n8nChatUrl": "YOUR_N8N_CHAT_TRIGGER_NODE_WEBHOOK_URL",
+    "metadata": {}, // Include any custom data to send with each message to your n8n workflow
+    "theme": {
+      "button": {
+        "backgroundColor": "#ffffff",
+        "right": 20,
+        "bottom": 20,
+        "size": 50,
+        "iconColor": "#000000",
+        "customIconSrc": "https://www.svgrepo.com/show/362552/chat-centered-dots-bold.svg",
+        "customIconSize": 60,
+        "customIconBorderRadius": 15,
+        "autoWindowOpen": {
+          "autoOpen": false,
+          "openDelay": 2
         },
-        "tooltip": {
-          "showTooltip": true,
-          "tooltipMessage": "Ak máte otázky, opýtajte sa!",
-          "tooltipBackgroundColor": "#fff9f6",
-          "tooltipTextColor": "#400040",
-          "tooltipFontSize": 15,
-          "hideTooltipOnMobile": true
+        "borderRadius": "rounded",
+        "draggable": false
+      },
+      "tooltip": {
+        "showTooltip": true,
+        "tooltipMessage": "Ak máte otázky, opýtajte sa!",
+        "tooltipBackgroundColor": "#ffffff",
+        "tooltipTextColor": "#000000",
+        "tooltipFontSize": 15,
+        "hideTooltipOnMobile": true
+      },
+      "allowProgrammaticMessage": false,
+      "chatWindow": {
+        "borderRadiusStyle": "rounded",
+        "avatarBorderRadius": 25,
+        "messageBorderRadius": 13,
+        "showTitle": true,
+        "title": "Chat asistent ",
+        "titleAvatarSrc": "https://www.svgrepo.com/show/362552/chat-centered-dots-bold.svg",
+        "avatarSize": 36,
+        "welcomeMessage": "Ahoj! Som tvoj digitálny trénerský asistent. 💪\nPomôžem ti s otázkami o tréningu, výžive alebo spolupráci s Michalom. Ako ti môžem pomôcť?",
+        "errorMessage": "Ups, niečo sa pokazilo. 🙁 Skús to prosím znova, alebo nás kontaktuj priamo na [email/tel.č.].",
+        "backgroundColor": "#fdfaf7",
+        "height": 500,
+        "width": 400,
+        "fontSize": 15,
+        "starterPromptFontSize": 15,
+        "renderHTML": true,
+        "clearChatOnReload": false,
+        "showScrollbar": false,
+        "botMessage": {
+          "backgroundColor": "#000000",
+          "textColor": "#fafafa",
+          "showAvatar": true,
+          "avatarSrc": "https://www.svgrepo.com/show/334455/bot.svg",
+          "showCopyToClipboardIcon": false
         },
-        "allowProgrammaticMessage": false,
-        "chatWindow": {
-          "borderRadiusStyle": "rounded",
-          "avatarBorderRadius": 25,
-          "messageBorderRadius": 6,
-          "showTitle": true,
-          "title": "Chat asistent",
-          "titleAvatarSrc": "https://www.svgrepo.com/show/362552/chat-centered-dots-bold.svg",
-          "avatarSize": 40,
-          "welcomeMessage": "Ahoj! Som tvoj digitálny trénerský asistent. 💪\nPomôžem ti s otázkami o tréningu, výžive alebo spolupráci s Michalom. Ako ti môžem pomôcť?",
-          "errorMessage": "Ups, niečo sa pokazilo. 🙁 Skús to prosím znova, alebo nás kontaktuj priamo na info@michalkralik.sk",
+        "userMessage": {
+          "backgroundColor": "#fff6f3",
+          "textColor": "#050505",
+          "showAvatar": true,
+          "avatarSrc": "https://www.svgrepo.com/show/532363/user-alt-1.svg"
+        },
+        "textInput": {
+          "placeholder": "Napíš svoju otázku...",
           "backgroundColor": "#ffffff",
-          "height": 600,
-          "width": 400,
-          "fontSize": 16,
-          "starterPromptFontSize": 15,
-          "renderHTML": true,
-          "clearChatOnReload": false,
-          "showScrollbar": false,
-          "botMessage": {
-            "backgroundColor": "#f36539",
-            "textColor": "#fafafa",
-            "showAvatar": true,
-            "avatarSrc": "https://www.svgrepo.com/show/334455/bot.svg",
-            "showCopyToClipboardIcon": false
-          },
-          "userMessage": {
-            "backgroundColor": "#fff6f3",
-            "textColor": "#050505",
-            "showAvatar": true,
-            "avatarSrc": "https://www.svgrepo.com/show/532363/user-alt-1.svg"
-          },
-          "textInput": {
-            "placeholder": "Napíš svoju otázku...",
-            "backgroundColor": "#ffffff",
-            "textColor": "#1e1e1f",
-            "sendButtonColor": "#f36539",
-            "maxChars": 500,
-            "maxCharsWarningMessage": "Správa je príliš dlhá. Skráť ju prosím na maximum 500 znakov.",
-            "autoFocus": true,
-            "borderRadius": 31,
-            "sendButtonBorderRadius": 50
-          }
+          "textColor": "#000000",
+          "sendButtonColor": "#000000",
+          "maxChars": 499,
+          "maxCharsWarningMessage": "Správa je príliš dlhá. Skráť ju prosím na maximum 500 znakov.",
+          "autoFocus": true,
+          "borderRadius": 20,
+          "sendButtonBorderRadius": 12
         }
       }
+    }
     });
   </script>
-</body>
-</html>
