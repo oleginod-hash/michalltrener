@@ -718,3 +718,80 @@ html, body { width: 100%; }
 </div>
 </body>
 </html>
+
+<script type="module" defer>
+  import Chatbot from "https://cdn.n8nchatui.com/v1/embed.js";
+  Chatbot.init({
+    "n8nChatUrl": "https://oleginoo2026.app.n8n.cloud/webhook/00c0d7bd-9785-4b9a-9c5e-752eccbf7e7c/chat",
+    "metadata": {}, // Include any custom data to send with each message to your n8n workflow
+    "theme": {
+      "button": {
+        "backgroundColor": "#0160f4",
+        "right": 20,
+        "bottom": 20,
+        "size": 50,
+        "iconColor": "#ffffff",
+        "customIconSrc": "https://www.svgrepo.com/show/362552/chat-centered-dots-bold.svg",
+        "customIconSize": 60,
+        "customIconBorderRadius": 15,
+        "autoWindowOpen": {
+          "autoOpen": false,
+          "openDelay": 2
+        },
+        "borderRadius": "rounded",
+        "draggable": false
+      },
+      "tooltip": {
+        "showTooltip": true,
+        "tooltipMessage": "Ak máte otázky, pýtajte sa!",
+        "tooltipBackgroundColor": "#d1e3ff",
+        "tooltipTextColor": "#000000",
+        "tooltipFontSize": 15,
+        "hideTooltipOnMobile": true
+      },
+      "allowProgrammaticMessage": false,
+      "chatWindow": {
+        "borderRadiusStyle": "rounded",
+        "avatarBorderRadius": 25,
+        "messageBorderRadius": 15,
+        "showTitle": true,
+        "title": "AI Chat asistent ",
+        "avatarSize": 36,
+        "welcomeMessage": "Ahoj!👋 Pomôžem ti s otázkami o tom, ako funguje takýto chatbot 🤖 od Drugy Automations⚡. Čo by si chcel vedieť? 🤔",
+        "errorMessage": "Ups, niečo sa pokazilo. 🙁 Skús to prosím znova, alebo nás kontaktuj priamo na [ drugyautomations@gmail.com / 0902 694 316 ].",
+        "backgroundColor": "#d1e3ff",
+        "height": 500,
+        "width": 400,
+        "fontSize": 15,
+        "starterPromptFontSize": 13,
+        "renderHTML": true,
+        "clearChatOnReload": false,
+        "showScrollbar": false,
+        "botMessage": {
+          "backgroundColor": "#0160f4",
+          "textColor": "#fafafa",
+          "showAvatar": true,
+          "avatarSrc": "https://www.svgrepo.com/show/334455/bot.svg",
+          "showCopyToClipboardIcon": false
+        },
+        "userMessage": {
+          "backgroundColor": "#fff6f3",
+          "textColor": "#050505",
+          "showAvatar": true,
+          "avatarSrc": "https://www.svgrepo.com/show/532363/user-alt-1.svg"
+        },
+        "textInput": {
+          "placeholder": "Napíš svoju otázku...",
+          "backgroundColor": "#ffffff",
+          "textColor": "#000000",
+          "sendButtonColor": "#0160f4",
+          "maxChars": 499,
+          "maxCharsWarningMessage": "Správa je príliš dlhá. Skráť ju prosím na maximum 500 znakov.",
+          "autoFocus": true,
+          "borderRadius": 20,
+          "sendButtonBorderRadius": 12
+        }
+      }
+    }
+    });
+  </script>
